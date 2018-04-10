@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<h1>Signup</h1>
+    <form action='/error' method='POST'>
+        <table>
+            <tr>
+                <td><label>Username</label></td>
+                <span class="error" name="empty_field_error" value="{{empty_field_error}}"> {{empty_field_error}} </span>
+                <td>
+                    <input name="username" type="text" value='{{username}}' />
+                    <span class="error" name="username_error" value="{{username_error}}">{{username_error}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td>
+                    <input name="password" type="password" value='{{password}}' />
+                    <span class="error" name="password_error" value="{{password_error}}">{{password_error}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Verify Password</label></td>
+                <td>
+                    <input name="verify" type="password" value="{{verify}}">
+                    <span class="error" name="match_error" value="{{match_error}}">{{match_error}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email (optional)</label></td>
+                <td>
+                    <input name="email" type="text" value="{{email}}">
+                    <span class="error" name="email_error" value="{{email_error}}">{{email_error}}</span>
+                    <span class="error" name="empty_email_error" value="{{empty_email_error}}">{{empty_email_error}}</span>
+                </td>
+        
+            </tr>
+            
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
